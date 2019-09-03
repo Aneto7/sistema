@@ -1,0 +1,725 @@
+﻿<!DOCTYPE html>
+<html>
+    
+   <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title>Gestao Interna - Lançar Justificativa</title>
+        <!-- Favicon-->
+        <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+        <!-- Bootstrap Core Css -->
+        <link href="../../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Waves Effect Css -->
+        <link href="../../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+        <!-- Animation Css -->
+        <link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+        <!-- Colorpicker Css -->
+        <link href="../../../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+
+        <!-- Dropzone Css -->
+        <link href="../../../plugins/dropzone/dropzone.css" rel="stylesheet">
+
+        <!-- Multi Select Css -->
+        <link href="../../../plugins/multi-select/css/multi-select.css" rel="stylesheet">
+
+        <!-- Bootstrap Spinner Css -->
+        <link href="../../../plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+
+        <!-- Bootstrap Tagsinput Css -->
+        <link href="../../../plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+
+        <!-- Bootstrap Select Css -->
+        <link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+        <!-- noUISlider Css -->
+        <link href="../../../plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+
+
+        <!-- JQuery DataTable Css -->
+        <link href="../../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- Morris Chart Css-->
+        <link href="../../../plugins/morrisjs/morris.css" rel="stylesheet" />
+
+        <!-- Custom Css -->
+        <link href="../../../css/style.css" rel="stylesheet">
+
+        <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+        <link href="../../../css/themes/all-themes.css" rel="stylesheet" />
+    </head>
+
+    <body class="theme-green">
+        <!-- Page Loader -->
+        <div class="page-loader-wrapper">
+            <div class="loader">
+                <div class="preloader">
+                    <div class="spinner-layer pl-green">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <p>Aguarde, carregando...</p>
+            </div>
+        </div>
+        <!-- #END# Page Loader -->
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+        <!-- #END# Overlay For Sidebars -->
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="search-icon">
+                <i class="material-icons">search</i>
+            </div>
+            <input type="text" placeholder="DIGITE AQUI SUA PESQUISA...">
+            <div class="close-search">
+                <i class="material-icons">close</i>
+            </div>
+        </div>
+        <!-- #END# Search Bar -->
+        <!-- Top Bar -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                    <a href="javascript:void(0);" class="bars"></a>
+                    <a class="navbar-brand" href="paginainicial.html"><b>LDC. - </b>sistema de gestão interna</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Call Search -->
+                        <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                        <!-- #END# Call Search -->
+                        <!-- Notifications -->
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                <i class="material-icons">notifications</i>
+                                <span class="label-count">7</span> <!-- Inserir uma contagem de número de notificações para análise -->
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">ANÁLISES PARA JUSTIFICATIVA</li>
+                                <li class="body">
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="icon-circle bg-light-green">
+                                                    <i class="material-icons">announcement</i>
+                                                </div>
+                                                <div class="menu-info">
+                                                    <h4>12 Solicitações de análise</h4><!-- Inserir o número de análises para este usuário-->
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">
+                                                <div class="icon-circle bg-cyan">
+                                                    <i class="material-icons">directions_car</i>
+                                                </div>
+                                                <div class="menu-info">
+                                                    <h4>4 Próximas Revisões </h4><!-- inserir número de revizões -->
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- #END# Notifications -->
+                        <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- #Top Bar -->
+        <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                <!-- User Info -->
+                <div class="user-info">
+                    <div class="image">
+                        <img src="../../../images/169357e.jpg" width="48" height="48" alt="User" /> <!-- Buscar imagem no banco de dados-->
+                    </div>
+                    <div class="info-container">
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Antonio da Paz Rosa Neto</div> <!-- Buscar nome no banco de dados-->
+                        <div class="email">antonio.rosa@ldc.com</div><!-- Buscar email no banco de dados-->
+                        <div class="btn-group user-helper-dropdown">
+                            <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                                <li role="seperator" class="divider"></li>
+                                <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #User Info -->
+                <!-- Menu -->
+                <div class="menu">
+                    <ul class="list">
+                        <li class="header">MENU PRINCIPAL</li>
+                        <li class="active">
+                            <a href="paginainicial.html">
+                                <i class="material-icons">home</i>
+                                <span>Início</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">attach_money</i>
+                                <span>Justificativa</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="pages/widgets/cards/basic.html">Lançar</a>
+                                </li>
+                                <li>
+                                    <a href="pages/widgets/cards/colored.html">Controle</a>
+                                </li>
+                                <li>
+                                    <a href="pages/widgets/cards/no-header.html">Consulta</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">assignment_turned_in</i>
+                                <span>Controle</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="pages/forms/basic-form-elements.html">Combustível</a>
+                                </li>
+                                <li>
+                                    <a href="pages/forms/advanced-form-elements.html">Infração</a>
+                                </li>
+                                <li>
+                                    <a href="pages/forms/form-examples.html">Manutenção</a>
+                                </li>
+                                <li>
+                                    <a href="pages/forms/form-validation.html">Revisão</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">assignment</i>
+                                <span>Cadastro</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="pages/forms/basic-form-elements.html">Cartão de Abastecimento</a>
+                                </li>
+                                <li>
+                                    <a href="pages/forms/advanced-form-elements.html">Condutor</a>
+                                </li>
+                                <li>
+                                    <a href="pages/forms/form-examples.html">Tipo de Veículo</a>
+                                </li>
+                                <li>
+                                    <a href="pages/forms/form-validation.html">Veículo</a>
+                                </li>
+                                <li>
+                                    <a href="pages/forms/form-validation.html">Filial</a>
+                                </li> 
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">build</i>
+                                <span>Configuração</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="pages/tables/normal-tables.html">Usuário</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">perm_media</i>
+                                <span>Arquivos</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="pages/medias/image-gallery.html">Orçamento</a>
+                                </li>
+                                <li>
+                                    <a href="pages/medias/carousel.html">Tabela Abastecimento</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2017 <a href="https://www.linkedin.com/in/adm-antonioneto/" target="_blank">Antonio Neto - Analista</a>.
+                    </div>
+                    <div class="version">
+                        <b>Version: </b> 2.0.1
+                    </div>
+                </div>
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+            <!-- Right Sidebar -->
+            <aside id="rightsidebar" class="right-sidebar">
+                <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                    <li role="presentation" class="active"><a href="#skins" data-toggle="tab">Sobre</a></li>
+                    <li role="presentation"><a href="#settings" data-toggle="tab">Funções</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                        <ul>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/500x300">
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                        text ever since the 1500s
+                                    </p>
+                                    <p>
+                                        <button type="button" class="btn btn-primary btn-circle-lg waves-effect waves-circle waves-float waves-black">
+                                            <i class="material-icons">email</i>
+                                        </button>
+                                    </p>
+                                </div>s
+                            </div>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="settings">
+                        <ul>
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/500x300">
+                                <div class="caption">
+                                    <h3>Thumbnail label</h3>
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                        text ever since the 1500s
+                                    </p>
+                                    <p>
+                                        <button type="button" class="btn btn-primary btn-circle-lg waves-effect waves-circle waves-float waves-black">
+                                            <i class="material-icons">email</i>
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <!-- #END# Right Sidebar -->
+        </section>
+
+        <section class="content">
+            <div class="container-fluid">
+
+                <!-- Widgets -->
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-light-green hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">playlist_add_check</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">Orçado Mensal</div>
+                                <div class="number count-to" data-from="0" data-to="125" data-speed="1000" data-fresh-interval="20"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-light-green hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">help</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">Realizado Mensal</div>
+                                <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-cyan hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">forum</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">Saldo Mensal</div>
+                                <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-light-green hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">playlist_add_check</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">Orçado Acumulado</div>
+                                <div class="number count-to" data-from="0" data-to="125" data-speed="1000" data-fresh-interval="20"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-light-green hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">help</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">Realizado Acumulado</div>
+                                <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-cyan hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">forum</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">Saldo Acumulado</div>
+                                <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
+                    <div class="panel-group" id="accordion_9" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-col-light-green">
+                            <div class="panel-heading" role="tab" id="headingOne_9">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion_9" href="#collapseOne_9" aria-expanded="true" aria-controls="collapseOne_9">
+                                        <i class="material-icons">expand_more</i>Dados para Justificativas
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne_9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_9">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="body">
+                                            <div class="row clearfix">
+                                                <div class="col-md-3">
+                                                    <p class = "">
+                                                        <b>Mês</b>
+                                                    </p>
+                                                    <select class="form-control show-tick" data-live-search="true">
+                                                        <option>Hot Dog, Fries and a Soda</option>
+                                                        <option>Burger, Shake and a Smile</option>
+                                                        <option>Sugar, Spice and all things nice</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <p>
+                                                        <b>Área</b>
+                                                    </p>
+                                                    <select class="form-control show-tick" data-live-search="true">
+                                                        <option>Hot Dog, Fries and a Soda</option>
+                                                        <option>Burger, Shake and a Smile</option>
+                                                        <option>Sugar, Spice and all things nice</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <p>
+                                                        <b>Plataforma</b>
+                                                    </p>
+                                                    <select class="form-control show-tick" data-live-search="true">
+                                                        <option>Hot Dog, Fries and a Soda</option>
+                                                        <option>Burger, Shake and a Smile</option>
+                                                        <option>Sugar, Spice and all things nice</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <p>
+                                                        <b>Região</b>
+                                                    </p>
+                                                    <select class="form-control show-tick" data-live-search="true">
+                                                        <option>Hot Dog, Fries and a Soda</option>
+                                                        <option>Burger, Shake and a Smile</option>
+                                                        <option>Sugar, Spice and all things nice</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row clearfix">
+                                                <div class="col-md-3">
+                                                    <p>
+                                                        <b>Filial</b>
+                                                    </p>
+                                                    <select class="form-control show-tick" data-live-search="true">
+                                                        <option>Hot Dog, Fries and a Soda</option>
+                                                        <option>Burger, Shake and a Smile</option>
+                                                        <option>Sugar, Spice and all things nice</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <p>
+                                                        <b>Magnitude</b>
+                                                    </p>
+                                                    <select class="form-control show-tick" data-live-search="true">
+                                                        <option>Hot Dog, Fries and a Soda</option>
+                                                        <option>Burger, Shake and a Smile</option>
+                                                        <option>Sugar, Spice and all things nice</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <p>
+                                                        <b>Centro de Custo</b>
+                                                    </p>
+                                                    <select class="form-control show-tick" data-live-search="true">
+                                                        <option>Hot Dog, Fries and a Soda</option>
+                                                        <option>Burger, Shake and a Smile</option>
+                                                        <option>Sugar, Spice and all things nice</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <p>
+                                                        <b>Conta</b>
+                                                    </p>
+                                                    <select class="form-control show-tick" data-live-search="true">
+                                                        <option>Hot Dog, Fries and a Soda</option>
+                                                        <option>Burger, Shake and a Smile</option>
+                                                        <option>Sugar, Spice and all things nice</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="panel-group" id="accordion_2" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-col-cyan">
+                            <div class="panel-heading" role="tab" id="headingOne_1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapseOne_2" aria-expanded="true" aria-controls="collapseOne_2">
+                                        <i class="material-icons">expand_more</i>Lançamento de Justificativas
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne_2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_2">
+                                <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <textarea rows="2" class="form-control no-resize auto-growth" placeholder="Inserir aqui a justificativa"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="collapseOne_2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_2">
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <p>
+                                                <b>Tipo de Justificativa</b>
+                                            </p>
+                                            <select class="form-control show-tick" data-live-search="true">
+                                                <option>Hot Dog, Fries and a Soda</option>
+                                                <option>Burger, Shake and a Smile</option>
+                                                <option>Sugar, Spice and all things nice</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>
+                                                <b>Vincular Responsável</b>
+                                            </p>
+                                            <select class="form-control show-tick" data-live-search="true">
+                                                <option>Hot Dog, Fries and a Soda</option>
+                                                <option>Burger, Shake and a Smile</option>
+                                                <option>Sugar, Spice and all things nice</option>
+                                            </select>
+                                        </div>
+                                        <button type="button" class="btn bg-cyan btn-block btn-xs waves-effect">Incluir Justificativa</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="panel-group" id="accordion_1" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-col-cyan">
+                            <div class="panel-heading" role="tab" id="headingOne_1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion_1" href="#collapseOne_1" aria-expanded="true" aria-controls="collapseOne_1">
+                                        <i class="material-icons">expand_more</i>Justificativas Realizadas
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_1">
+                                <div class="panel-body">
+                                    Valor rateado, solicitado por Carina Nicolav, em função da nÃ£o contratação de pessoas com deficiÃªncia ( rateado entre todas as unidades que nÃ£o foi cumprida a meta  )
+                                    <div>
+                                        <nav>
+                                            <ul class="pagination pagination-sm">
+                                                <li>
+                                                    <a href="javascript:void(0);" class="waves-effect">
+                                                        <i class="material-icons">chevron_left</i>
+                                                    </a>
+                                                </li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">1</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">2</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">3</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">4</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">5</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">6</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">7</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">8</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">9</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">10</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">11</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">12</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">13</a></li>
+                                                <li><a href="javascript:void(0);" class="waves-effect">14</a></li>
+                                                <li>
+                                                    <a href="javascript:void(0);" class="waves-effect">
+                                                        <i class="material-icons">chevron_right</i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Examples With Material Design Colors -->
+                <!-- Full Body Examples With Material Design Colors -->
+
+                <div class="container-fluid">
+                    <!-- Exportable Table -->
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>
+                                        EXPORTABLE TABLE
+                                    </h2>
+                                </div>
+                                <div class="body">
+                                    <div class="table-responsive">
+                                        <table id="tabelaOrcamento" class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Plataforma</th>
+                                                    <th>Região</th>
+                                                    <th>Des CC</th>
+                                                    <th>Filial</th>
+                                                    <th>Magnitude</th>
+                                                    <th>Desc Conta</th>
+                                                    <th>BDG Mês</th>
+                                                    <th>Real Mês</th>
+                                                    <th>Dif Mês</th>
+                                                    <th>BDG Acum</th>
+                                                    <th>Real Acum</th>
+                                                    <th>Dif Acum</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #END# Exportable Table -->
+                </div>
+        </section>
+
+        <!-- Jquery Core Js -->
+        <script src="../../../plugins/jquery/jquery.min.js"></script>
+
+        <!-- Bootstrap Core Js -->
+        <script src="../../../plugins/bootstrap/js/bootstrap.js"></script>
+
+        <!-- Select Plugin Js -->
+        <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+        <!-- Slimscroll Plugin Js -->
+        <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+        <!-- Bootstrap Colorpicker Js -->
+        <script src="../../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+        <!-- Dropzone Plugin Js -->
+        <script src="../../../plugins/dropzone/dropzone.js"></script>
+
+        <!-- Input Mask Plugin Js -->
+        <script src="../../../plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+        <!-- Multi Select Plugin Js -->
+        <script src="../../../plugins/multi-select/js/jquery.multi-select.js"></script>
+
+        <!-- Jquery Spinner Plugin Js -->
+        <script src="../../../plugins/jquery-spinner/js/jquery.spinner.js"></script>
+
+        <!-- Bootstrap Tags Input Plugin Js -->
+        <script src="../../../plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+        <!-- noUISlider Plugin Js -->
+        <script src="../../../plugins/nouislider/nouislider.js"></script>
+
+        <!-- Waves Effect Plugin Js -->
+        <script src="../../../plugins/node-waves/waves.js"></script>
+
+        <!-- Jquery CountTo Plugin Js -->
+        <script src="../../../plugins/jquery-countto/jquery.countTo.js"></script>
+
+        <!-- Morris Plugin Js -->
+        <script src="../../../plugins/raphael/raphael.min.js"></script>
+        <script src="../../../plugins/morrisjs/morris.js"></script>
+
+        <!-- Jquery DataTable Plugin Js -->
+        <script src="../../../plugins/jquery-datatable/jquery.dataTables.js"></script>
+        <script src="../../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+        <script src="../../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+        <script src="../../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+        <script src="../../../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+        <script src="../../../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+        <script src="../../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+        <script src="../../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+        <script src="../../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+        <!-- Sparkline Chart Plugin Js -->
+        <script src="../plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+        <!-- Custom Js -->
+        <script src="../../../js/admin.js"></script>
+        <script src="../../../js/pages/tables/jquery-datatable.js"></script>
+        <script src="../../../js/pages/index.js"></script>
+
+        <!-- Demo Js -->
+        <script src="../../../js/demo.js"></script>
+
+        <!-- Multi Select Plugin Js -->
+        <script src="../../../plugins/multi-select/js/jquery.multi-select.js"></script>
+    </body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabelaorcamento').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": "preencherTab"
+            });
+        });
+    </script>
+</html>
